@@ -14,6 +14,8 @@
 @import "components/index";
 @import "pages/index";
 
+@import "components/footer";
+
 img#pic {
   width: 30px !important;
 }
@@ -57,30 +59,3 @@ img#logo {
   border-bottom: 1px solid #DBDBDB !important;
 }
 
-.footer-container{
-
-  font-size: 12px;
-  width: 98%;
-  padding-top: 19px;
-  height: 48px;
-  line-height: 20px;
-}
-
-// #footer-info {
-//   text-align: left;
-//   text-decoration: none;
-// }
-
-// .footer-links {
-//   padding: 0px !important;
-// }
-
-// .banner-pic{
-//   height: 400px !important;
-// }
-//   width: 100px !important;
-//   // background-size: cover !important;
-//   background-position: center !important;
-//   // color: white;
-//   position: relative !important;
-// }
