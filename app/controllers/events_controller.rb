@@ -7,6 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @user_check = @event.bookings.where("user_id = ?", current_user.id)
   end
 
   def new

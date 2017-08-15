@@ -1,18 +1,28 @@
-<h2><%= @event.title %></h2>
-<p>Date & Time: <%= @event.date %></p>
-<p>Location: <%= @event.location %></p>
-<p>Type: <%= @event.category.capitalize %></p>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+      <h3><%= @event.title %></h3>
+      <p>Date & Time: <%= @event.date %></p>
+      <p>Location: <%= @event.location %></p>
+      <p>Type: <%= @event.category.capitalize %></p>
 
-<% if current_user.id == @event.user_id %>
-  <h3>Volunteers</h3>
-  <% @event.bookings.map do |booking| %>
-    <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-  <% end %>
-  <%= link_to "Edit", edit_event_path %>
-  <%= link_to "Delete", event_path, method: "delete" %>
+      <% if current_user.id == @event.user_id %>
+        <h3>Volunteers</h3>
 
-  <% elsif user_signed_in? %>
+        <% @event.bookings.map do |booking| %>
+          <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
+        <% end %>
 
+        <%= link_to "Edit", edit_event_path %>
+        <%= link_to "Delete", event_path, method: "delete" %>
 
-<% end %>
-<%= link_to "Return", events_path %>
+        <% elsif user_signed_in? && !@user_check.empty? %>
+            <p>You have already registered for this event.</p>
+        <% else %>
+            <%= link_to "Sign up", event_bookings_path(@event), method: "post" %>
+        <% end %>
+
+        <%= link_to "Return", events_path %>
+    </div>
+  </div>
+</div>
