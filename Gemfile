@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
 gem 'devise'
+gem 'cloudinary'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
