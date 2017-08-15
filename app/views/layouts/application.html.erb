@@ -10,7 +10,8 @@
   </head>
   <body>
     <%= render "pages/navbar" %>
-    <%= render "pages/banner" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= render "pages/footer" %>
