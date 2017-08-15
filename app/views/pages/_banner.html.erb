@@ -2,4 +2,21 @@
   <%= image_tag "volunteerus.png.jpeg", :class => "banner-pic" %>
   <h3>Welcome To Volunteer Us!!</h3>
   <p>Find an event that speaks to you!</p>
+
+  <div class = "container">
+    <div class = row>
+      <% @events.limit(3).each do |event| %>
+        <div class = "col-xs-12 col-sm-4">
+          <div class ="card">
+            <div class="card-content">
+              <p><%= event.title %></p>
+            </div>
+            <div class="card-option">
+              <%= link_to 'Event details', event_path(event) %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+     </div>
+  </div>
 </div>
