@@ -1,15 +1,34 @@
 <div class="container text-center">
   <h1><%= current_user.first_name %>'s Profile</h1>
   <div class="row text-center">
-    <p>First name: <%= current_user.first_name %></p>
-    <p>Last name: <%= current_user.last_name %></p>
-    <p>Email: <%= current_user.email %></p>
-    <p>Organizer? <%= current_user.is_organizer ? "Yes" : "No" %></p>
+    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <p>First name: <%= current_user.first_name %></p>
+      <p>Last name: <%= current_user.last_name %></p>
+      <p>Email: <%= current_user.email %></p>
+      <p>Organizer? <%= current_user.is_organizer ? "Yes" : "No" %></p>
+    </div>
   </div>
+
   <div class="row text-center">
-    <h3>Past events</h3>
-    <% current_user.bookings.map do |booking| %>
-      <p> <%= booking.event.title %></p>
-      <p> <%= booking.event.date.strftime("Participated on %F") %></p>
-    <% end %>
+    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <h3>Events you registered</h3>
+      <% if current_user.bookings.empty? %>
+        <strong><p>You have not registered for any event yet!</p></strong>
+      <% else %>
+        <% current_user.bookings.map do |booking| %>
+          <p> <%= booking.event.title %></p>
+          <p> <%= booking.event.date.strftime("Date: %F") %></p>
+        <% end %>
+      <% end %>
+    </div>
   </div>
+
+  <div class="row text-center">
+    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <h3>Events organized by you</h3>
+      <% Event.where("user_id = ?", current_user.id).map do |event| %>
+        <p><%= link_to event.title, event_path(event) %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
