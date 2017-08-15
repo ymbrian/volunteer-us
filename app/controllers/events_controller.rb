@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :authenticate_user!, only: :show
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -7,7 +7,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @user_check = @event.bookings.where("user_id = ?", current_user.id)
+    if user_signed_in?
+      @user_check = @event.bookings.where("user_id = ?", current_user.id)
+    end
   end
 
   def new

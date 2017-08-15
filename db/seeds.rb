@@ -11,7 +11,7 @@ User.destroy_all
 Booking.destroy_all
 
 # Create organizers
-User.create(first_name: "Roy5678",
+User.create(first_name: "Roy",
             last_name: "Rao",
             email: "roy@gmail.com",
             password: "admin1234",
@@ -54,19 +54,51 @@ EVENTS = [
   },
 
   {
-    title: "Teaching high school students English",
+    title: "Teaching English",
     date: Time.new(2017,9,1,9,0),
     location: "Chongqing",
     category: "education",
+    user: User.find(1)
+  },
+
+  {
+    title: "Startup Grind 2",
+    date: Time.new(2017,9,25,9,0),
+    location: "Hong Kong",
+    category: "startup",
     user: User.find(2)
   },
 
   {
-    title: "Elderly visit",
-    date: Time.new(2017,9,20,9,0),
+    title: "Startup Grind 3",
+    date: Time.new(2017,9,9,19,30),
     location: "Hong Kong",
-    category: "healthcare",
-    user: User.find(3)
+    category: "startup",
+    user: User.find(2)
+  },
+
+  {
+    title: "Startup Grind 4",
+    date: Time.new(2017,9,25,20,0),
+    location: "Hong Kong",
+    category: "startup",
+    user: User.find(2)
+  },
+
+  {
+    title: "Fuck Up Night 2",
+    date: Time.new(2017,10,20,18,0),
+    location: "Hong Kong",
+    category: "startup",
+    user: User.find(1)
+  },
+
+  {
+    title: "Fuck Up Night 2",
+    date: Time.new(2017,10,28,18,30),
+    location: "Hong Kong",
+    category: "startup",
+    user: User.find(1)
   },
 ]
 

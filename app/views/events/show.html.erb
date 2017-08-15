@@ -5,9 +5,13 @@
       <p>Date & Time: <%= @event.date %></p>
       <p>Location: <%= @event.location %></p>
       <p>Type: <%= @event.category.capitalize %></p>
+      <p>Organizer: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
 
-      <% if current_user.id == @event.user_id %>
-        <h3>Volunteers</h3>
+      <p><%= @event.bookings.count %> people have registered so far!</p>
+
+      <!-- checks if user is the organizer of event -->
+      <% if user_signed_in? && current_user.id == @event.user_id %>
+        <h3>Registered volunteers</h3>
 
         <% @event.bookings.map do |booking| %>
           <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
@@ -16,9 +20,11 @@
         <%= link_to "Edit", edit_event_path %>
         <%= link_to "Delete", event_path, method: "delete" %>
 
+        <!-- checks if user has already registered for the event -->
         <% elsif user_signed_in? && !@user_check.empty? %>
-            <p>You have already registered for this event.</p>
+            <strong><p>You have already registered for this event!</p></strong>
         <% else %>
+
             <%= link_to "Sign up", event_bookings_path(@event), method: "post" %>
         <% end %>
 
