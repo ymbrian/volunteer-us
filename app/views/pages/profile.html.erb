@@ -1,0 +1,15 @@
+<div class="container text-center">
+  <h1><%= current_user.first_name %>'s Profile</h1>
+  <div class="row text-center">
+    <p>First name: <%= current_user.first_name %></p>
+    <p>Last name: <%= current_user.last_name %></p>
+    <p>Email: <%= current_user.email %></p>
+    <p>Organizer? <%= current_user.is_organizer ? "Yes" : "No" %></p>
+  </div>
+  <div class="row text-center">
+    <h3>Past events</h3>
+    <% current_user.bookings.map do |booking| %>
+      <p> <%= booking.event.title %></p>
+      <p> <%= booking.event.date.strftime("Participated on %F") %></p>
+    <% end %>
+  </div>

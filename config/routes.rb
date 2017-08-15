@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :events do
     resources :bookings, only: [:index, :show, :new, :create]
   end
+  get '/pages/profile', to: 'pages#profile'
 end
