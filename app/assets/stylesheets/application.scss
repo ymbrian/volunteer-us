@@ -13,3 +13,74 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+img#pic {
+  width: 30px !important;
+}
+img#logo {
+  width: 40px;
+}
+
+.navbar-wagon {
+  background-color: white;
+  color: #2DB94D;
+  transition: all 0.3s ease;
+  height: 70px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-wagon-right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-wagon-item {
+  color: #2DB94D;
+  cursor: pointer;
+  padding: 0 20px;
+}
+
+.banner-pic {
+  height: 300px;
+  width: 100%;
+}
+
+.banner {
+  text-align: center;
+}
+
+.line {
+  border-bottom: 1px solid #DBDBDB !important;
+}
+
+.footer-container{
+
+  font-size: 12px;
+  width: 98%;
+  padding-top: 19px;
+  height: 48px;
+  line-height: 20px;
+}
+
+// #footer-info {
+//   text-align: left;
+//   text-decoration: none;
+// }
+
+// .footer-links {
+//   padding: 0px !important;
+// }
+
+// .banner-pic{
+//   height: 400px !important;
+// }
+//   width: 100px !important;
+//   // background-size: cover !important;
+//   background-position: center !important;
+//   // color: white;
+//   position: relative !important;
+// }
