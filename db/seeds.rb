@@ -97,7 +97,7 @@ EVENTS = [
     location: "桐梓林东路12号",
     category: "startup",
     user: User.find(1),
-    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    image_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
@@ -106,7 +106,7 @@ EVENTS = [
     location: "1附21 Binjiang Middle Rd, Jinjiang Qu, Chengdu Shi, Sichuan Sheng, China, 610000",
     category: "startup",
     user: User.find(1),
-    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    image_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 ]
 
