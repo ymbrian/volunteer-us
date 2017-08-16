@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 ruby '2.3.4'
 
 gem 'omniauth-facebook'
@@ -9,8 +9,6 @@ gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
 gem 'devise'
-gem 'cloudinary'
-
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -26,6 +24,13 @@ gem "gmaps4rails"
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
 end
+
+# Photo upload
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
+
 
 group :development, :test do
   gem 'pry-byebug'

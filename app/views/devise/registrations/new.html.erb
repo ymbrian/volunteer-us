@@ -13,6 +13,7 @@
           <%= f.input :password_confirmation, required: true %>
           <%= f.label :is_organizer, "Are you an organizer?" %>
           <%= f.check_box(:is_organizer) %>
+          <%= f.input :photo, as: :attachinary %>
         </div>
 
         <div class="form-actions">

@@ -1,3 +1,80 @@
-<!-- <h3>Welcome To Volunteer Us!!</h3>
-<p>Find an event that speaks to you!</p> -->
-<%= render "pages/banner" %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(40, 75, 13, 0.11) 0%, rgba(59, 81, 39, 0.37) 50%), url('https://images.pexels.com/photos/398532/pexels-photo-398532.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');">
+  <div class="banner-content">
+    <h1>Welcome To Volunteer Us!!</h1>
+    <p>Find an event that speaks to you!</p>
+    <div class="dropdown-where">
+      <button class="dropbtn">Cities</button>
+      <div class="dropdown-content">
+        <a href="#">Chengdu</a>
+        <a href="#">Chongqing</a>
+        <a href="#">Kunming</a>
+        <a href="#">Shanghai</a>
+        <a href="#">Beijing</a>
+      </div>
+    </div>
+    <div class="dropdown-dates">
+      <button class="dropbtn">Dates</button>
+      <div class="dropdown-content">
+        <a href="#">Jan 2017</a>
+        <a href="#">Feb 2017</a>
+        <a href="#">Mar 2017</a>
+        <a href="#">Apr 2017</a>
+        <a href="#">May 2017</a>
+        <a href="#">Jun 2017</a>
+        <a href="#">Jul 2017</a>
+        <a href="#">Aug 2017</a>
+        <a href="#">Sep 2017</a>
+        <a href="#">Oct 2017</a>
+        <a href="#">Nov 2017</a>
+        <a href="#">Dec 2017</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="space" style="padding-top: 10px; padding-bottom: 10px;">
+    <div class="heading" style="font-size: 15px; color: #2DB94D;">
+      <h3>Top Upcoming Events:</h3>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-4">
+        <!-- insert <div class="card"> -->
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/433452/pexels-photo-433452.jpeg?h=350&auto=compress&cs=tinysrgb');">
+          <div class="card-category"> Entertainment</div>
+          <div class="card-description">
+            <h2>CD Punk Fest!</h2>
+            <p>August 4th 2017</p>
+            <p>Chengdu</p>
+          </div>
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <!-- insert <div class="card"> -->
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/9003/night.jpg?h=350&auto=compress&cs=tinysrgb');">
+          <div class="card-category">Sport</div>
+          <div class="card-description">
+            <h2>CD Pandas vs SH Dragons</h2>
+            <p>September 19th 2017</p>
+            <p>Shanghai</p>
+          </div>
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <!-- insert <div class="card"> -->
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/7374/startup-photos.jpg?h=350&auto=compress&cs=tinysrgb);">
+          <div class="card-category">Tech</div>
+          <div class="card-description">
+            <h2>Women Who Code</h2>
+            <p>October 1st 2017</p>
+            <p>Chengdu</p>
+          </div>
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
