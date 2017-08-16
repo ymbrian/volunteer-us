@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.4'
 
+gem 'omniauth-facebook'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -8,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
 gem 'devise'
+gem 'cloudinary'
+
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'
@@ -24,4 +27,7 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'faker'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
