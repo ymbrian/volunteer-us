@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  mount Attachinary::Engine => "/attachinary"
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   root to: 'pages#home'
@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :bookings, only: [:index, :show, :new, :create]
   end
   get '/pages/profile', to: 'pages#profile'
+
 end
