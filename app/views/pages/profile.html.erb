@@ -1,3 +1,31 @@
+<div class="infor text-center">
+  <div class="profile-background">
+  </div>
+  <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+    <!-- <div class="avatar">
+      <%= image_tag "avatar.jpg", :class => "avatar" %>
+    </div> -->
+    <p><%= current_user.first_name %></p>
+  </div>
+</div>
+
+<div class = "box">
+  <!-- <div class="col-xs-12 col-sm-offset-4 col-sm-4"> -->
+  <a class="tab active" href="#">
+    <%= image_tag "邮件.png" %>
+    <p> <%= current_user.email %></p>
+  </a>
+  <a class="tab" href="#">
+    <%= image_tag "加入.png" %>
+    <p>Events you registered</p>
+  </a>
+  <a class="tab" href="#">
+    <%= image_tag "领导.png" %>
+    <p>Events organized by you</p>
+  </a>
+</div>
+
+</div>
 <div class="container text-center">
   <h1><%= current_user.first_name %>'s Profile</h1>
   <div class="row text-center">

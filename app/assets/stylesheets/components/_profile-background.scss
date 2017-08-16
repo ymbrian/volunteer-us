@@ -1,0 +1,10 @@
+.profile-background{
+  background-image: url("profile-back.jpg");
+  height: 340px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  filter: blur(5px);
+}
