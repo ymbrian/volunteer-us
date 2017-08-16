@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:facebook]
   has_many :bookings
   has_many :events
+  has_attachment :photo
   validates :first_name, :last_name, presence: true
 
   def self.find_for_facebook_oauth(auth)
