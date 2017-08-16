@@ -10,23 +10,27 @@
   </div>
 
   <div class="row text-center">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
       <h3>Events you registered</h3>
+      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
       <% if current_user.bookings.empty? %>
         <strong><p>You have not registered for any event yet!</p></strong>
       <% else %>
+        <div class = "card">
+        <div class = "card-content">
         <% current_user.bookings.map do |booking| %>
           <p> <%= booking.event.title %></p>
           <p> <%= booking.event.date.strftime("Date: %F") %></p>
         <% end %>
       <% end %>
-    </div>
+      </div>
+      </div>
+      </div>
   </div>
 
   <% if current_user.is_organizer == true %>
   <div class="row text-center">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
       <h3>Events organized by you</h3>
+      <div class="col-xs-12 col-sm-offset-4 col-sm-4">
       <% Event.where("user_id = ?", current_user.id).map do |event| %>
         <p><%= link_to event.title, event_path(event) %></p>
       <% end %>
