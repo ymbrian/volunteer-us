@@ -40,65 +40,73 @@ EVENTS = [
   {
     title: "Startup Grind",
     date: Time.new(2017,8,20,18,0),
-    location: "Chengdu",
+    location: "中国四川省成都市锦江区滨江东路9号",
     category: "startup",
-    user: User.find(1)
+    user: User.find(1),
+    image: "https://static.pexels.com/photos/139976/pexels-photo-139976.jpeg"
   },
 
   {
     title: "Fuck Up Night",
     date: Time.new(2017,8,23,17,0),
-    location: "Chengdu",
+    location: "中国四川省成都市武侯区天府三街88號",
     category: "startup",
-    user: User.find(1)
+    user: User.find(1),
+    image: "https://static.pexels.com/photos/4516/sky-people-clouds-crowd.jpg"
   },
 
   {
     title: "Teaching English",
     date: Time.new(2017,9,1,9,0),
-    location: "Chongqing",
+    location: "中国四川省成都市武侯区天府五街天府5街",
     category: "education",
-    user: User.find(1)
+    user: User.find(1),
+    image: "https://static.pexels.com/photos/241544/pexels-photo-241544.jpeg"
   },
 
   {
     title: "Startup Grind 2",
     date: Time.new(2017,9,25,9,0),
-    location: "Hong Kong",
+    location: "笔帖式街81号",
     category: "startup",
-    user: User.find(2)
+    user: User.find(2),
+    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
     title: "Startup Grind 3",
     date: Time.new(2017,9,9,19,30),
-    location: "Hong Kong",
+    location: "1656 Tianfu Ave North Section, Wuhou Qu, Chengdu Shi, Sichuan Sheng, China",
     category: "startup",
-    user: User.find(2)
+    user: User.find(2),
+    image: "https://static.pexels.com/photos/450271/pexels-photo-450271.jpeg"
   },
 
   {
     title: "Startup Grind 4",
     date: Time.new(2017,9,25,20,0),
-    location: "Hong Kong",
+    location: "9 Binjiang Middle Rd, Jinjiang Qu, Chengdu Shi, Sichuan Sheng, China, 610020",
     category: "startup",
-    user: User.find(2)
+    user: User.find(2),
+    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
-    title: "Fuck Up Night 2",
+    title: "Fuck Up Night 5",
     date: Time.new(2017,10,20,18,0),
-    location: "Hong Kong",
+    location: "桐梓林东路12号",
     category: "startup",
-    user: User.find(1)
+    user: User.find(1),
+    image_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
-    title: "Fuck Up Night 2",
+    title: "Fuck Up Night 6",
     date: Time.new(2017,10,28,18,30),
-    location: "Hong Kong",
+    location: "1附21 Binjiang Middle Rd, Jinjiang Qu, Chengdu Shi, Sichuan Sheng, China, 610000",
     category: "startup",
-    user: User.find(1)
+    user: User.find(1),
+    image_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 ]
 

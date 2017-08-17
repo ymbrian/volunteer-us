@@ -30,6 +30,15 @@
   <h1><%= current_user.first_name %>'s Profile</h1>
   <div class="row text-center">
     <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <% if current_user.provider == "facebook"  %>
+        <%= image_tag current_user.facebook_picture_url %>
+      <% else %>
+        <% if current_user.photo? %>
+          <%= cl_image_tag current_user.photo.path, width: 200, height: 300, crop: :fill %>
+          <% else %>
+          <p>'NO PHOTO'</p>
+        <% end %>
+      <% end  %>
       <p>First name: <%= current_user.first_name %></p>
       <p>Last name: <%= current_user.last_name %></p>
       <p>Email: <%= current_user.email %></p>
@@ -38,25 +47,34 @@
   </div>
 
   <div class="row text-center">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
       <h3>Events you registered</h3>
       <% if current_user.bookings.empty? %>
         <strong><p>You have not registered for any event yet!</p></strong>
       <% else %>
         <% current_user.bookings.map do |booking| %>
-          <p> <%= booking.event.title %></p>
-          <p> <%= booking.event.date.strftime("Date: %F") %></p>
+          <div class="col-xs-12  col-sm-4">
+            <div class = "card">
+              <div class = "card-content">
+                <p> <%= booking.event.title %></p>
+                <p> <%= booking.event.date.strftime("Date: %F") %></p>
+              </div>
+            </div>
+          </div>
         <% end %>
       <% end %>
-    </div>
   </div>
 
   <% if current_user.is_organizer == true %>
   <div class="row text-center">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
       <h3>Events organized by you</h3>
       <% Event.where("user_id = ?", current_user.id).map do |event| %>
-        <p><%= link_to event.title, event_path(event) %></p>
+      <div class="col-xs-12  col-sm-4">
+          <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= event.image %>);">
+            <div class = "card-content">
+                <p><%= link_to event.title, event_path(event) %></p>
+            </div>
+          </div>
+      </div>
       <% end %>
     </div>
   </div>

@@ -1,32 +1,52 @@
-.card{
+.card {
   height: 175px;
-  width:300px;
-  margin:40px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(‘cocktail2.jpg’);
+  background-size: cover !important;
   background-position: center;
+  border: 1px solid #0ABD14;
   color: white;
   position: relative;
+  margin: 20px 20px;
+}
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+.card-description h2 {
+  font-size: 24px;
+}
+.card-description p {
+  font-size: 14px;
+  opacity: 1;
+  font-weight: lighter;
+}
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+.card-link:hover {
+  opacity: 0.1;
+}
+.heading h3 {
+  margin-top: 0px;
+  text-align: center;
 }
 
-
-.card-content {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 145px;
-  p {
-  font-size: 20px;
-  font-family: ‘Lobster’, cursive;
-  }
+.card a {
+  color: white;
 }
 
-.card-option {
-  background-color: white;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 30px;
-  display:flex;
-  justify-content: space-around;
-  align-items: center;
-}

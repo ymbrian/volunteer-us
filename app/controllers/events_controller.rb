@@ -4,6 +4,12 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @events_map = Event.where.not(latitude: nil, longitude: nil)
+    @hash = Gmaps4rails.build_markers(@events_map) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      marker.infowindow event.title
+    end
   end
 
   def show
@@ -18,7 +24,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.user = User.first #to be changed to current_user
+    @event.user = current_user
     if @event.save
       redirect_to event_path(@event)
     else
