@@ -1,4 +1,4 @@
-class Event < ApplicationRecord
+ class Event < ApplicationRecord
   CATEGORY = ["startup", "healthcare", "education", "sports"]
   belongs_to :user
   has_many :bookings, dependent: :destroy
