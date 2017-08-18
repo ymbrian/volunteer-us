@@ -15,7 +15,6 @@
   </div>
 </div>
 
-
 <div class="container">
   <div class="space" style="padding-top: 10px; padding-bottom: 10px;">
     <div class="heading" style="font-size: 15px; color: #2DB94D;">
@@ -26,7 +25,7 @@
         <% @featured_events.map do |event| %>
           <div class="col-xs-12 col-sm-4">
             <%=link_to event_path(event) do %>
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/433452/pexels-photo-433452.jpeg?h=350&auto=compress&cs=tinysrgb');">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path event.poster.path %>');">
                 <div class="card-category">
                   <%= event.category %>
                 </div>

@@ -15,14 +15,16 @@ User.create(first_name: "Roy",
             last_name: "Rao",
             email: "roy@gmail.com",
             password: "admin1234",
-            is_organizer: true)
+            is_organizer: true,
+            confirmed_at: Time.now)
 
 
 User.create(first_name: "Dan12345",
             last_name: "Hao",
             email: "dan@gmail.com",
             password: "admin1234",
-            is_organizer: true)
+            is_organizer: true,
+            confirmed_at: Time.now)
 
 # Create volunteers
 20.times do
@@ -30,7 +32,8 @@ User.create(first_name: "Dan12345",
   User.create(first_name: first_name,
               last_name: Faker::Name.last_name,
               email: Faker::Internet.free_email(first_name),
-              password: "abcd1234")
+              password: "abcd1234",
+              confirmed_at: Time.now)
 end
 
 # Create events
@@ -97,7 +100,7 @@ EVENTS = [
     location: "桐梓林东路12号",
     category: "startup",
     user: User.first,
-    image_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
@@ -106,7 +109,7 @@ EVENTS = [
     location: "1附21 Binjiang Middle Rd, Jinjiang Qu, Chengdu Shi, Sichuan Sheng, China, 610000",
     category: "startup",
     user: User.first,
-    image_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 ]
 

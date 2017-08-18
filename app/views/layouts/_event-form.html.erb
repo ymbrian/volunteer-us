@@ -3,6 +3,8 @@
       <%= f.input :title %>
       <%= f.input :date %>
       <%= f.input :location %>
+      <%= f.input :poster, as: :attachinary %>
+      <%= f.input :images, as: :attachinary %>
       <%= f.input :category, collection: Event::CATEGORY %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>
