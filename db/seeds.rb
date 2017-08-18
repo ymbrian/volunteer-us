@@ -46,7 +46,7 @@ EVENTS = [
     location: "中国四川省成都市锦江区滨江东路9号",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/139976/pexels-photo-139976.jpeg"
+    poster_url: "https://static.pexels.com/photos/139976/pexels-photo-139976.jpeg"
   },
 
   {
@@ -55,7 +55,7 @@ EVENTS = [
     location: "中国四川省成都市武侯区天府三街88號",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/4516/sky-people-clouds-crowd.jpg"
+    poster_url: "https://static.pexels.com/photos/4516/sky-people-clouds-crowd.jpg"
   },
 
   {
@@ -64,7 +64,7 @@ EVENTS = [
     location: "中国四川省成都市武侯区天府五街天府5街",
     category: "education",
     user: User.first,
-    image: "https://static.pexels.com/photos/241544/pexels-photo-241544.jpeg"
+    poster_url: "https://static.pexels.com/photos/241544/pexels-photo-241544.jpeg"
   },
 
   {
@@ -73,7 +73,7 @@ EVENTS = [
     location: "笔帖式街81号",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    poster_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
@@ -82,7 +82,7 @@ EVENTS = [
     location: "1656 Tianfu Ave North Section, Wuhou Qu, Chengdu Shi, Sichuan Sheng, China",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/450271/pexels-photo-450271.jpeg"
+    poster_url: "https://static.pexels.com/photos/450271/pexels-photo-450271.jpeg"
   },
 
   {
@@ -91,7 +91,7 @@ EVENTS = [
     location: "9 Binjiang Middle Rd, Jinjiang Qu, Chengdu Shi, Sichuan Sheng, China, 610020",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    poster_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
@@ -100,7 +100,7 @@ EVENTS = [
     location: "桐梓林东路12号",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    poster_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 
   {
@@ -109,7 +109,7 @@ EVENTS = [
     location: "1附21 Binjiang Middle Rd, Jinjiang Qu, Chengdu Shi, Sichuan Sheng, China, 610000",
     category: "startup",
     user: User.first,
-    image: "https://static.pexels.com/photos/7376/startup-photos.jpg"
+    poster_url: "https://static.pexels.com/photos/7376/startup-photos.jpg"
   },
 ]
 
