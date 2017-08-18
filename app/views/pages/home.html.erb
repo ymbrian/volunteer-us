@@ -25,12 +25,19 @@
         <!-- insert <div class="card"> -->
         <% @featured_events.map do |event| %>
           <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/433452/pexels-photo-433452.jpeg?h=350&auto=compress&cs=tinysrgb');">
-              <div class="card-category"><%= event.category %></div>
-              <div class="card-description">
-                <h2><%= link_to event.title, event_path(event) %></h2>
-                <p><%= event.date.strftime("Date: %F") %></p>
-              </div>
+            <div class="card">
+
+                <%= link_to event_path(event) do %>
+                  <%= image_tag event.image, class: "card" %>
+                <% end %>
+
+                <div class="card-category"><%= event.category %></div>
+
+                <div class="card-description">
+                  <h2><%= event.title %></h2>
+                  <p><%= event.date.strftime("Date: %F") %></p>
+                </div>
+
             </div>
           </div>
         <% end %>
