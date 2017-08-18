@@ -6,4 +6,14 @@ class Event < ApplicationRecord
   validates :category, inclusion: { in: CATEGORY }
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
+  after_update :send_event_update_email
+
+
+  private
+
+  def send_event_update_email
+    self.bookings.each do |booking|
+      UserMailer.event_update(booking).deliver_now
+    end
+  end
 end
