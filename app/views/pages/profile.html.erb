@@ -53,13 +53,20 @@
         <strong><p>You have not registered for any event yet!</p></strong>
       <% else %>
         <% current_user.bookings.map do |booking| %>
-          <div class="col-xs-12  col-sm-4">
-            <div class = "card">
-              <div class = "card-content">
-                <p> <%= booking.event.title %></p>
-                <p> <%= booking.event.date.strftime("Date: %F") %></p>
+         <div class="col-xs-12 col-sm-4">
+            <%=link_to event_path(booking.event) do %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.event.poster.path %>');">
+                <div class="card-category">
+                  <%= booking.event.category %>
+                </div>
+                <div class="card-date">
+                  <p><%= booking.event.date.strftime("%F") %></p>
+                </div>
+                <div class="card-description">
+                  <h2><%= booking.event.title%></h2>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
         <% end %>
       <% end %>
@@ -69,13 +76,18 @@
   <div class="row text-center">
       <h3>Events organized by you</h3>
       <% Event.where("user_id = ?", current_user.id).map do |event| %>
-      <div class="col-xs-12  col-sm-4">
-          <div class = "card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= event.image %>);">
-            <div class = "card-content">
-                <p><%= link_to event.title, event_path(event) %></p>
-            </div>
-          </div>
-      </div>
+       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path booking.event.poster.path %>');">
+                <div class="card-category">
+                  <%= booking.event.category %>
+                </div>
+                <div class="card-date">
+                  <p><%= booking.event.date.strftime("%F") %></p>
+                </div>
+                <div class="card-description">
+                  <h2><%= booking.event.title%></h2>
+                </div>
+              </div>
+
       <% end %>
     </div>
   </div>

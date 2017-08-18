@@ -3,12 +3,20 @@
   <div class="row text-center">
     <% @events.each do |event| %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path event.poster.path %>')">
-          <div class="card-content">
-              <p><%= link_to event.title, event_path(event) %></p>
+            <%=link_to event_path(event) do %>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path event.poster.path %>');">
+                <div class="card-category">
+                  <%= event.category %>
+                </div>
+                <div class="card-date">
+                  <p><%= event.date.strftime("%F") %></p>
+                </div>
+                <div class="card-description">
+                  <h2><%= event.title%></h2>
+                </div>
+              </div>
+            <% end %>
           </div>
-        </div>
-        </div>
     <% end %>
   </div>
 </div>
