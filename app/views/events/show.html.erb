@@ -1,30 +1,48 @@
 <div class="container">
   <div class="row text-center">
     <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+    <!-- basic info event -->
       <h3><%= @event.title %></h3>
       <p>Date & Time: <%= @event.date %></p>
       <p>Location: <%= @event.location %></p>
       <p>Type: <%= @event.category.capitalize %></p>
       <p>Organizer: <%= @event.user.first_name %> <%= @event.user.last_name %></p>
-
       <p><%= @event.bookings.count %> people have registered so far!</p>
 
-      <!-- checks if user is the organizer of event -->
+      <!-- checks if user is 1) signed in and 2) organizer of event -->
       <% if user_signed_in? && current_user.id == @event.user_id %>
-        <h3>Registered volunteers</h3>
 
-        <% @event.bookings.map do |booking| %>
-          <p><%= booking.user.first_name %> <%= booking.user.last_name %></p>
-        <% end %>
+        <h3>Volunteers</h3>
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @event.bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+                <td><%= booking.confirmed ? "Confirmed" : "Not yet confirmed" %></td>
+                <% if booking.confirmed == false %>
+                  <td><%= link_to "Approve", event_booking_path(@event, booking), method: "patch" %></td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
 
         <%= link_to "Edit", edit_event_path %>
         <%= link_to "Delete", event_path, method: "delete" %>
 
-        <!-- checks if user has already registered for the event -->
-        <% elsif user_signed_in? && !@user_check.empty? %>
-            <strong><p>You have already registered for this event!</p></strong>
+        <!-- checks if user has been confirmed by organizer  -->
+        <% elsif user_signed_in? && !@user_confirmed.empty? %>
+            <strong><p><%= @event.user.first_name %> has confirmed you for this event!</p></strong>
+        <!-- checks if user has submitted registration -->
+        <% elsif user_signed_in? && @user_registered %>
+            <p>You have already registered for this event!</p>
         <% else %>
-
             <%= link_to "Sign up", event_bookings_path(@event), method: "post" %>
         <% end %>
 

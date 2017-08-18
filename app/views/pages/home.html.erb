@@ -24,12 +24,15 @@
         <!-- insert <div class="card"> -->
         <% @featured_events.map do |event| %>
           <div class="col-xs-12 col-sm-4">
+
             <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path event.poster.path %>')">
               <div class="card-category"><%= event.category %></div>
               <div class="card-description">
                 <h2><%= link_to event.title, event_path(event) %></h2>
                 <p><%= event.date.strftime("Date: %F") %></p>
               </div>
+
+
             </div>
           </div>
         <% end %>

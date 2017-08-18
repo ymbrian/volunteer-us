@@ -11,28 +11,25 @@
       </div>
     <% end %>
   </div>
-  <!-- create event button only displays if user is an organizer -->
-  <% if user_signed_in? && current_user.is_organizer == true %>
-    <p><%= link_to "Create an event", new_event_path, class: "btn btn-primary" %></p>
-  <% end %>
 </div>
 
-  <div id="map" style="width: 80%; height: 600px; margin: auto;"></div>
-    <% content_for(:after_js) do %>
-      <%= javascript_tag do %>
-        $(document).ready(function() {
-          var handler = Gmaps.build('Google');
-          handler.buildMap({ internal: { id: 'map' } }, function() {
-            markers = handler.addMarkers(<%= raw @hash.to_json %>);
-            handler.bounds.extendWith(markers);
-            handler.fitMapToBounds();
-            if (markers.length == 0) {
-              handler.getMap().setZoom(2);
-            } else if (markers.length == 1) {
-              handler.getMap().setZoom(14);
-            }
-          });
+<div id="map" style="width: 80%; height: 600px; margin: auto;"></div>
+  <% content_for(:after_js) do %>
+    <%= javascript_tag do %>
+      $(document).ready(function() {
+        var handler = Gmaps.build('Google');
+        handler.buildMap({ internal: { id: 'map' } }, function() {
+          markers = handler.addMarkers(<%= raw @hash.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+          if (markers.length == 0) {
+            handler.getMap().setZoom(2);
+          } else if (markers.length == 1) {
+            handler.getMap().setZoom(14);
+          }
         });
-      <% end %>
+      });
     <% end %>
+
+  <% end %>
 

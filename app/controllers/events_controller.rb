@@ -14,7 +14,8 @@ class EventsController < ApplicationController
 
   def show
     if user_signed_in?
-      @user_check = @event.bookings.where("user_id = ?", current_user.id)
+      @user_confirmed = @event.bookings.where("user_id = ? AND confirmed = ?", current_user.id, true)
+      @user_registered = current_user.bookings.find_by(event_id: @event.id)
     end
     @event = Event.find(params[:id])
     @event_coordinates = Gmaps4rails.build_markers(@event) do |event, marker|
@@ -42,8 +43,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event.update(event_params)
-    if @event.save
+    if @event.update(event_params)
       redirect_to event_path(@event)
     else
       render :edit

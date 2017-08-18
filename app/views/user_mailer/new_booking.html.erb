@@ -1,0 +1,5 @@
+<h3>Hey <%= @booking.event.user.first_name %>!</h3>
+
+<p><%= @booking.user.first_name %> has signed up for <%= @booking.event.title %>!</p>
+
+<p><%= link_to "Confirm here", event_url(@booking.event) %>
