@@ -17,7 +17,7 @@
   <% end %>
 </div>
 
-  <div id="map" style="width: 80%; height: 600px; margin: auto;">
+  <div id="map" style="width: 80%; height: 600px; margin: auto;"></div>
     <% content_for(:after_js) do %>
       <%= javascript_tag do %>
         $(document).ready(function() {
@@ -35,4 +35,4 @@
         });
       <% end %>
     <% end %>
-</div>
+
