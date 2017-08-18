@@ -8,6 +8,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
 }
 
 /* Logo */
@@ -89,4 +92,9 @@
 
 .navbar-events {
   font-size: 30px;
+}
+
+.navbar-wagon-brand:hover {
+  color: #da552f;
+  text-decoration: none !important;
 }
