@@ -2,7 +2,13 @@
   <div class="profile-background">
   </div>
   <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-    <p><%= current_user.first_name %></p>
+
+    <div class="avatar">
+      <%= image_tag "avatar.jpg", :class => "avatar" %>
+
+    </div>
+    <p><%= current_user.first_name %>  <%= current_user.last_name %></p>
+
   </div>
 </div>
 
