@@ -43,7 +43,7 @@ EVENTS = [
   {
     title: "Startup Grind",
     date: Time.new(2017,8,20,18,0),
-    location: "中国四川省成都市锦江区滨江东路9号",
+    location: "Chengdu",
     category: "startup",
     user: User.first,
     poster_url: "https://static.pexels.com/photos/139976/pexels-photo-139976.jpeg"

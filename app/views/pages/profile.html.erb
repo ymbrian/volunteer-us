@@ -1,15 +1,22 @@
 <div class="infor text-center">
   <div class="profile-background">
   </div>
+ <div class="row">
+ <div class="col-xs-12 col-sm-offset-4 col-sm-4">
+      <% if current_user.provider == "facebook"  %>
+        <%= image_tag current_user.facebook_picture_url %>
+      <% else %>
+        <% if current_user.photo? %>
+          <%= cl_image_tag current_user.photo.path, width: 200, height: 300, crop: :fill %>
+          <% else %>
+          <p>'NO PHOTO'</p>
+        <% end %>
+      <% end  %>
+    </div>
+ </div>
   <div class="col-xs-12 col-sm-offset-4 col-sm-4">
 
-    <div class="avatar">
-      <%= image_tag "avatar.jpg", :class => "avatar" %>
 
-    </div>
-    <p><%= current_user.first_name %>  <%= current_user.last_name %></p>
-
-  </div>
 </div>
 
 <div class = "box">
@@ -33,16 +40,7 @@
   <h1><%= current_user.first_name %>'s Profile</h1>
   <div class="row text-center">
     <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-      <% if current_user.provider == "facebook"  %>
-        <%= image_tag current_user.facebook_picture_url %>
-      <% else %>
-        <% if current_user.photo? %>
-          <%= cl_image_tag current_user.photo.path, width: 200, height: 300, crop: :fill %>
-          <% else %>
-          <p>'NO PHOTO'</p>
-        <% end %>
-      <% end  %>
-      <p>First name: <%= current_user.first_name %></p>
+           <p>First name: <%= current_user.first_name %></p>
       <p>Last name: <%= current_user.last_name %></p>
       <p>Email: <%= current_user.email %></p>
       <p>Organizer? <%= current_user.is_organizer ? "Yes" : "No" %></p>
