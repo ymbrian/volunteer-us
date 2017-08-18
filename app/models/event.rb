@@ -2,7 +2,7 @@
   CATEGORY = ["startup", "healthcare", "education", "sports"]
   belongs_to :user
   has_many :bookings, dependent: :destroy
-  validates :title, :location, :category, :poster, presence: true
+  validates :title, :location, :category, presence: true
   validates :category, inclusion: { in: CATEGORY }
   geocoded_by :location
   after_validation :geocode, if: :location_changed?
