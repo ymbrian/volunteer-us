@@ -1,0 +1,38 @@
+.form-style{
+    width: 185px;
+    height: 29px;
+    line-height: 29px!important;
+    font-size: 12px;
+    border-radius: 15px;
+    padding: 0 35px 0 17px;
+    border: 1px solid rgba(255,255,255,.5);
+    background: 0 0;
+    box-sizing: border-box;
+    margin:auto;
+}
+
+.form-botton{
+  color: #999999;
+  border: 1px solid rgba(255,255,255,.5);
+  padding: 6px 58px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+.form-botton:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+
+.form-right {
+  width: 50%;
+  display: inline;
+  float: right;
+}
+
+.form-left {
+  float: left;
+  width: 50%;
+  display: inline;
+}

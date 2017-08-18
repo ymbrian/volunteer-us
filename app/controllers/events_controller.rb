@@ -17,6 +17,20 @@ class EventsController < ApplicationController
       @user_confirmed = @event.bookings.where("user_id = ? AND confirmed = ?", current_user.id, true)
       @user_registered = current_user.bookings.find_by(event_id: @event.id)
     end
+    @event = Event.find(params[:id])
+    @event_coordinates = Gmaps4rails.build_markers(@event) do |event, marker|
+      marker.lat event.latitude
+      marker.lng event.longitude
+      # marker.infowindow @event.title
+    end
+    # @event = Event.find(params[:id])
+    # @events_map = Event.where.not(latitude: nil, longitude: nil)
+    # @event_coordinates = Gmaps4rails.build_markers(@event) do |event, marker|
+    #   marker.lat event.latitude
+    #   marker.lng event.longitude
+    #   marker.infowindow event.title
+    # end
+
   end
 
   def new
@@ -56,6 +70,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :date, :location, :category)
+    # These params are required to create an event in event/new view
+    params.require(:event).permit(:title, :date, :location, :category, :poster, images: [])
   end
 end

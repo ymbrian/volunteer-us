@@ -1,9 +1,29 @@
-  <div class="event-form">
-    <%= simple_form_for @event do |f| %>
-      <%= f.input :title %>
-      <%= f.input :date %>
-      <%= f.input :location %>
-      <%= f.input :category, collection: Event::CATEGORY %>
-      <%= f.button :submit, class: "btn btn-primary" %>
-    <% end %>
+
+ <div class="background-event">
+  <div class="container text-center" style="height: 100vh; transform: translateY(20%)">
+    <div class="box-signin" style="height:550px; width:550px;">
+      <div class="box-flex">
+        <div class="box-infor">
+          <% if !@event.title.nil? %>
+            <h2>Edit your event</h2>
+          <% else %>
+            <h2>Create an new event</h2>
+          <% end %>
+          <div class="event-form">
+            <%= simple_form_for @event, defaults: { input_html: { class: "form-style" } } do |f| %>
+              <%= f.input :title %>
+              <%= f.input :date %>
+              <%= f.input :location %>
+              <%= f.input :category, collection: Event::CATEGORY %>
+              <%= f.button :submit, class: "btn btn-success" %>
+            <% end %>
+          </div>
+          <div class="box-link">
+            <%= link_to "Back", events_path %>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
+</div>
