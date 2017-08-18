@@ -1,26 +1,46 @@
-<div class="container text-center">
-  <h2>Sign up</h2>
-  <div class="row text-center">
-    <div class="col-xs-12 col-sm-offset-4 col-sm-4">
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-        <%= f.error_notification %>
+<div class="background-signin">
+  <div class="container text-center" style="height: 100vh; transform: translateY(5%)">
+    <div class="box-signin" style="height:706px; width:500px;">
+      <div class="box-flex">
+        <div class="box-infor">
+          <h2>Sign up</h2>
+          <hr style="height:1px;border:none;border-top:1px solid white;" />
+          <div class="row text-center">
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), defaults: { input_html: { class: "form-style" } }) do |f| %>
+                <%= f.error_notification %>
+            <div class="form-inputs">
+              <div class="form-left">
+                <%= f.input :first_name, required: true, autofocus: true %>
+              </div>
 
-        <div class="form-inputs">
-          <%= f.input :first_name, required: true, autofocus: true %>
-          <%= f.input :last_name, required: true, autofocus: true %>
-          <%= f.input :email, required: true, autofocus: true %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-          <%= f.input :password_confirmation, required: true %>
-          <%= f.label :is_organizer, "Are you an organizer?" %>
-          <%= f.check_box(:is_organizer) %>
-          <%= f.input :photo, as: :attachinary %>
-        </div>
+              <div class="form-right">
+                <%= f.input :last_name, required: true, autofocus: true %>
+              </div>
+              <div class="form-left">
+              <%= f.input :email, required: true, autofocus: true %>
+              </div>
+              <div class="form-right">
+              <%= f.input :is_organizer, collection: [["Yes", true], ["No", false]], label: "I am an organizer" %>
+              </div>
+              <div class="form-left">
+              <%= f.input :password, required: true %>
+              </div>
+              <div class="form-right">
+              <%= f.input :password_confirmation, required: true %>
+              </div>
 
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
+              <%= f.input :photo, as: :attachinary %>
+            </div>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Sign up", class: 'form-botton'%>
+            </div>
+            <% end %>
+            <div class="box-link">
+              <%= render "devise/shared/links" %>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
 </div>

@@ -23,6 +23,14 @@ class EventsController < ApplicationController
       marker.lng event.longitude
       # marker.infowindow @event.title
     end
+    # @event = Event.find(params[:id])
+    # @events_map = Event.where.not(latitude: nil, longitude: nil)
+    # @event_coordinates = Gmaps4rails.build_markers(@event) do |event, marker|
+    #   marker.lat event.latitude
+    #   marker.lng event.longitude
+    #   marker.infowindow event.title
+    # end
+
   end
 
   def new
