@@ -1,5 +1,48 @@
-<p>Welcome <%= @user.first_name %>!</p>
+<style>
+  .inner-container {
+    width: 500px;
+    padding: 60px;
+    margin: 0 auto;
+    background-color: white;
+    font-family: "Open Sans", "Helvetica", "sans-serif";
+    font-weight: lighter;
+    }
 
-<p>Thank you for registering on VolunteerUs. Please confirm your account email through the link below:</p>
+  .button-container a {
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px gray;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    width: 180px;
+    font-weight: lighter;
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+  }
+  .button-container {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+  }
+  .outer-container {
+    width: 100%;
+    height: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: green;
+  }
+</style>
+
+
+<div class="outer-container">
+  <div class ="inner-container">
+    <h1>Welcome <%= @user.first_name %>!</h1>
+
+    <p>Thank you for registering on VolunteerUs. Please confirm your account email through the link below:</p>
+    <div class="button-container">
+      <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+    </div>
+  </div>
+</div>
+
