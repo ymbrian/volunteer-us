@@ -16,6 +16,14 @@ class EventsController < ApplicationController
     if user_signed_in?
       @user_check = @event.bookings.where("user_id = ?", current_user.id)
     end
+    # @event = Event.find(params[:id])
+    # @events_map = Event.where.not(latitude: nil, longitude: nil)
+    # @event_coordinates = Gmaps4rails.build_markers(@event) do |event, marker|
+    #   marker.lat event.latitude
+    #   marker.lng event.longitude
+    #   marker.infowindow event.title
+    # end
+
   end
 
   def new
